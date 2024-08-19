@@ -26,6 +26,8 @@ class BookSubjectSpider(CrawlSpider):
         request = request.replace(url=request.url.replace("?", "/?"))
         return request
 
+
+    # //设置cookie 11个字段随机生成
     def start_requests(self):
         for url in self.start_urls:
             bid = "".join(random.choice(string.ascii_letters + string.digits) for x in range(11))
